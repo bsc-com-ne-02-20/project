@@ -1,54 +1,37 @@
 #include <iostream>
-#include "Square.h"
-#include "Triangle.h"
-#include "Circle.h"
-#include "Area.h"
+#include "Rectangle.h"
 
-int main()       {
-    using namespace shapes;
 
-    char        choice;
-    do {
-        std::cout << "Select shape to calculate area (s for square, t for triangle, c for circle, q to quit): ";
-  std::cin >> choice;
 
-        switch (choice) {
-            case 's': {
-                double side;
-           std::cout << "Enter side length of square: ";
-      std::cin >> side;
-                Square square(side);
-        std::cout << "Area of square: "    << Area::calculateArea(square) << std::endl;
-                break;
-            }
-            case 't': {
-                double base, height;
-       std::cout << "Enter base and height of triangle: ";
-                std::cin >> base >> height;
-         Triangle triangle(base, height);
-  std::cout << "Area of triangle: " << Area::calculateArea(triangle) << std::endl;
-                break;
-       }
-            case 'c': {
-                double radius;
-        std::cout << "Enter radius of circle: ";
-                std::cin >> radius;
-         Circle circle(radius);
-            std::cout << "Area of circle: " << Area::calculateArea(circle) << std::endl;
-                break;
- }
-            case 'q':
-                std::cout << "Exiting program..." << std::endl;
-                break;
- default:
-     std::cout << "Invalid choice. Please try again." << std::endl;
-        }
-} while (choice != 'q');
+using namespace std;
 
-   
-   
-   
+int main() {
+    float length, width;
+    
+cout << "Enter the length of the first rectangle: ";
+     cin >> length;
+    
+     cout << "Enter the width of the first rectangle: ";
+         cin >> width;
+    
+    Rectangle rect1;
+    rect1.setLength(length);
+    rect1.setWidth(width);
+    
+    cout << "Area of the first rectangle: " << rect1.calculateArea() << endl;
+    
+         cout << "Enter the length of the second rectangle: ";
+      cin >> length;
+    
+       cout << "Enter the width of the second rectangle: ";
+     
+     cin >> width;
+    
+    Rectangle rect2(length, width);
+    
+            cout << "Area of the second rectangle: " << rect2.calculateArea() <<     endl;
+    
    
    
     return 0;
-        }
+}
