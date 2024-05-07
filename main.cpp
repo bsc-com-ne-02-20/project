@@ -1,37 +1,31 @@
 #include <iostream>
-#include "Rectangle.h"
-
-
-
+#include "box.h"
 using namespace std;
 
 int main() {
-    float length, width;
-    
-cout << "Enter the length of the first rectangle: ";
-     cin >> length;
-    
-     cout << "Enter the width of the first rectangle: ";
-         cin >> width;
-    
-    Rectangle rect1;
-    rect1.setLength(length);
-    rect1.setWidth(width);
-    
-    cout << "Area of the first rectangle: " << rect1.calculateArea() << endl;
-    
-         cout << "Enter the length of the second rectangle: ";
-      cin >> length;
-    
-       cout << "Enter the width of the second rectangle: ";
-     
-     cin >> width;
-    
-    Rectangle rect2(length, width);
-    
-            cout << "Area of the second rectangle: " << rect2.calculateArea() <<     endl;
-    
-   
-   
+    Box Box1;
+    Box Box2;
+    Box Box3;
+    double volume = 0.0;
+
+    Box1.SetLength(6.0);
+    Box1.SetBreadth(7.0);
+    Box1.SetHeight(5.0);
+
+    Box2.SetLength(12.0);
+    Box2.SetBreadth(13.0);
+    Box2.SetHeight(19.0);
+
+    volume = Box1.GetVolume();
+    cout << "Volume of box1 : " << volume << endl;
+
+    volume = Box2.GetVolume();
+    cout << "Volume of box2 : " << volume << endl;
+
+    Box3 = Box1 + Box2;
+
+    volume = Box3.GetVolume();
+    cout << "Volume of box3 : " << volume << endl;
+
     return 0;
 }
