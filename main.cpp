@@ -1,31 +1,17 @@
 #include <iostream>
-#include "box.h"
+#include “Rectangle.h”
+#include “Triangle.h”
 using namespace std;
-
 int main() {
-    Box Box1;
-    Box Box2;
-    Box Box3;
-    double volume = 0.0;
-
-    Box1.SetLength(6.0);
-    Box1.SetBreadth(7.0);
-    Box1.SetHeight(5.0);
-
-    Box2.SetLength(12.0);
-    Box2.SetBreadth(13.0);
-    Box2.SetHeight(19.0);
-
-    volume = Box1.GetVolume();
-    cout << "Volume of box1 : " << volume << endl;
-
-    volume = Box2.GetVolume();
-    cout << "Volume of box2 : " << volume << endl;
-
-    Box3 = Box1 + Box2;
-
-    volume = Box3.GetVolume();
-    cout << "Volume of box3 : " << volume << endl;
-
-    return 0;
+ 
+ Rectangle rect;
+ Triangle trgl;
+ Polygon * pPoly1 = &rect;
+ Polygon * pPoly2 = &trgl;
+ pPoly1->SetValues(4,5);
+ pPoly2->SetValues(4,5);
+ pPoly1->PrintArea();
+ pPoly2->PrintArea();
+ 
+return 0;
 }
